@@ -71,7 +71,7 @@ public class Main {
         int mul = a * b;
         double div = (double) a / (double) b;
 
-        if (b == 0) {
+        if (b == 0 && c == '/') {
             System.out.println("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
         } else {
             switch (c) {
