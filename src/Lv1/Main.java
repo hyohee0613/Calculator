@@ -71,10 +71,20 @@ public class Main {
         int mul = a * b;
         double div = (double) a / (double) b;
 
-        System.out.println("sum: +" + sum);
-        System.out.println("sub: -" + sub);
-        System.out.println("mul: " + mul);
-        System.out.println("div: " + div);
+        switch (c) {
+            case '+':
+                System.out.println("계산 결과: " + sum);
+                break;
+            case '-':
+                System.out.println("계산 결과: " + sub);
+                break;
+            case '*':
+                System.out.println("계산 결과: " + mul);
+                break;
+            case '/':
+                System.out.println("계산 결과: " + div);
+                break;
+        }
 
 
 
