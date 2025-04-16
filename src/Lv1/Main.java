@@ -55,7 +55,7 @@ public class Main {
             System.out.println("사칙연산 기호를 입력해주세요. (+, -, *, /)");
             String ch = scan.nextLine();
 
-            if ((ch.length() == 1)&&"+-*/".contains(ch)) {
+            if ((ch.length() == 1) && "+-*/".contains(ch)) {
                 c = ch.charAt(0);
                 break;
 
@@ -71,24 +71,25 @@ public class Main {
         int mul = a * b;
         double div = (double) a / (double) b;
 
-        switch (c) {
-            case '+':
-                System.out.println("계산 결과: " + sum);
-                break;
-            case '-':
-                System.out.println("계산 결과: " + sub);
-                break;
-            case '*':
-                System.out.println("계산 결과: " + mul);
-                break;
-            case '/':
-                System.out.println("계산 결과: " + div);
-                break;
+        if (b == 0) {
+            System.out.println("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
+        } else {
+            switch (c) {
+                case '+':
+                    System.out.println("계산 결과: " + sum);
+                    break;
+                case '-':
+                    System.out.println("계산 결과: " + sub);
+                    break;
+                case '*':
+                    System.out.println("계산 결과: " + mul);
+                    break;
+                case '/':
+                    System.out.println("계산 결과: " + div);
+                    break;
+            }
+
+
         }
-
-
-
-
     }
-
 }
