@@ -10,12 +10,16 @@ public class Main {
 //        계산기는 exit을 입력할 때까지 계속해서 값을 받고 연산 결과를 반환한다.
 
         //스캐너 불러오기
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+
+        //변수 선언
+        int a = 0;
+        int b = 0;
 
         //값 입력
         while (true) {
             System.out.println("첫번째 숫자를 입력하세요: ");
-            int a = scanner.nextInt();
+            a = scan.nextInt();
 
             if (a < 0) {
                 System.out.println("0을 포함한 양의 정수로 다시 입력해주세요");
@@ -27,7 +31,8 @@ public class Main {
 
         while (true) {
             System.out.println("두번째 숫자를 입력하세요: ");
-            int b = scanner.nextInt();
+            b = scan.nextInt();
+            scan.nextLine();    // 입력 버퍼 제거
 
             if (b < 0) {
                 System.out.println("0을 포함한 양의 정수로 다시 입력해주세요");
@@ -43,10 +48,33 @@ public class Main {
 //라고 예쁘게 처리되길 원함 >> try-catch 예외 처리
 
         //사칙연산 기호 입력
-        System.out.println("테스트");
 
+        char c = ' ';
 
+        while (true) {
+            System.out.println("사칙연산 기호를 입력해주세요. (+, -, *, /)");
+            String ch = scan.nextLine();
 
+            if ((ch.length() == 1)&&"+-*/".contains(ch)) {
+                c = ch.charAt(0);
+                break;
+
+            } else {
+                System.out.println("+, -, *, / 중 한 개만 입력해주세요.");
+            }
+        }
+
+        //입력받은 정수 2개 (a,b)와 연산기호 (c)를 이용하여 연산 진행
+
+        int sum = a + b;
+        int sub = a - b;
+        int mul = a * b;
+        double div = (double) a / (double) b;
+
+        System.out.println("sum: +" + sum);
+        System.out.println("sub: -" + sub);
+        System.out.println("mul: " + mul);
+        System.out.println("div: " + div);
 
 
 
