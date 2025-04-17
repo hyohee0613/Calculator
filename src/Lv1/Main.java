@@ -13,9 +13,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         //변수 선언
-        int a = 0;
-        int b = 0;
-        String e = " ";
+        int a;
+        int b;
+        String e;
 
         while (true) {
 
@@ -52,7 +52,7 @@ public class Main {
 
             //사칙연산 기호 입력
 
-            char c = ' ';
+            char c;
 
             while (true) {
                 System.out.println("사칙연산 기호를 입력해주세요. (+, -, *, /)");
