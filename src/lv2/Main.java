@@ -7,6 +7,8 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        Calculator calculator = new Calculator();
+
         int inputA;
         int inputB;
         String inputE;
@@ -58,10 +60,9 @@ public class Main {
 
             //입력받은 정수 2개 (inputA,inputB)와 연산기호 (c)를 이용하여 연산 진행
 
-            Calculator calculator = new Calculator();
-
             try {
-                System.out.println("계산 결과: " + calculator.calculate(inputA, inputB, inputC));
+                double result = calculator.calculate(inputA, inputB, inputC);
+                System.out.println("계산 결과: " + calculator.getA() + " " + inputC + " " + calculator.getB() + " = " + result);
             } catch (ArithmeticException e) {
                 System.out.println("에러: " + e.getMessage());
             }
@@ -71,6 +72,8 @@ public class Main {
             System.out.println("더 계산하시겠습니까? (yes 입력 시 계속 / exit 입력 시 종료)");
             inputE = scan.nextLine();
             if (inputE.equals("exit")) {
+                System.out.println("계산을 종료합니다.");
+                calculator.removeResult();
                 break;
             }
 
