@@ -1,39 +1,41 @@
 package lv2;
 
-public class Calculator {
+import java.util.List;
+import java.util.ArrayList;
 
-    //사칙연산을 수행 후, 결과값 반환 메서드 구현 & 연산 결과를 저장하는 컬렉션 타입 필드를 가진 Calculator 클래스
+public class Calculator {
 
     //속성
     private int a;
     private int b;
+    private List<Double> resultAB = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션 타입 필드
 
-    //생성자
-    public Calculator (int a, int b){
-        this.a = a;
-        this.b = b;
-    }
+    //생성자 : 필요없음, 메서드에서 바로 값을 받아서 사용
+    public Calculator () {}
 
-    //기능
-     int sum (){
-        int result = a + b;
-        return result;
-    }
+    //기능: 연산 후 연산 결과를 컬렉션 필드에 저장
+     double calculate(int a, int b, char c) {
+        double result = 0;
+        switch (c) {
+             case '+':
+                 result = a + b;
+                 break;
+             case '-':
+                 result = a - b;
+                 break;
+             case '*':
+                 result = a * b;
+                 break;
+             case '/':
+                 result = (double) a / b;
+                 break;
 
-    int sub () {
-        int result = a - b;
-        return result;
-    }
+         }
+         resultAB.add(result);
+         return result;
+     }
 
-    int mul () {
-        int result = a * b;
-        return result;
-    }
 
-    double div () {
-        double result = (double) a / (double) b;
-        return result;
-    }
 
 
 }

@@ -40,14 +40,14 @@ public class Main {
 
             //사칙연산 기호 입력
 
-            char c = ' ';
+            char inputC = ' ';
 
             while (true) {
                 System.out.println("사칙연산 기호를 입력해주세요. (+, -, *, /)");
                 String ch = scan.nextLine();
 
                 if ((ch.length() == 1) && "+-*/".contains(ch)) {
-                    c = ch.charAt(0);
+                    inputC = ch.charAt(0);
                     break;
 
                 } else {
@@ -60,24 +60,12 @@ public class Main {
 
             Calculator calculator = new Calculator(inputA, inputB);
 
-            if (inputB == 0 && c == '/') {
+            if (inputB == 0 && inputC == '/') {
                 System.out.println("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
             } else {
-                switch (c) {
-                    case '+':
-                        System.out.println("계산 결과: " + calculator.sum());
-                        break;
-                    case '-':
-                        System.out.println("계산 결과: " + calculator.sub());
-                        break;
-                    case '*':
-                        System.out.println("계산 결과: " + calculator.mul());
-                        break;
-                    case '/':
-                        System.out.println("계산 결과: " + calculator.div());
-                        break;
-                }
+                System.out.println("계산 결과: " + calculator.calculate(inputA, inputB, inputC));
             }
+
 
             //계산을 더 진행할지 끝낼지 확인
 
@@ -88,8 +76,6 @@ public class Main {
             }
 
 
-
         }
     }
-
 }
