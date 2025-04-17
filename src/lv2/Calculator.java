@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public class Calculator {
 
     //속성
-    private int a;
-    private int b;
     private List<Double> resultAB = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션 타입 필드
 
     //생성자 : 필요없음, 메서드에서 바로 값을 받아서 사용
@@ -27,6 +25,9 @@ public class Calculator {
                  result = a * b;
                  break;
              case '/':
+                 if (b == 0) {
+                     throw new ArithmeticException("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
+                 }
                  result = (double) a / b;
                  break;
 

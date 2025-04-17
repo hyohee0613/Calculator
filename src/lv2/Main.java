@@ -58,14 +58,13 @@ public class Main {
 
             //입력받은 정수 2개 (inputA,inputB)와 연산기호 (c)를 이용하여 연산 진행
 
-            Calculator calculator = new Calculator(inputA, inputB);
+            Calculator calculator = new Calculator();
 
-            if (inputB == 0 && inputC == '/') {
-                System.out.println("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
-            } else {
+            try {
                 System.out.println("계산 결과: " + calculator.calculate(inputA, inputB, inputC));
+            } catch (ArithmeticException e) {
+                System.out.println("에러: " + e.getMessage());
             }
-
 
             //계산을 더 진행할지 끝낼지 확인
 
