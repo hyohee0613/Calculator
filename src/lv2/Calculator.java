@@ -14,26 +14,24 @@ public class Calculator {
     public Calculator () {}
 
     //기능: 연산 후 연산 결과를 컬렉션 필드에 저장
-     double calculate(int a, int b, char c) {
-        this.a = a;
-        this.b = b;
+     double calculate(char c) {
 
         double result = 0;
         switch (c) {
              case '+':
-                 result = this.a + this.b;
+                 result = a + b;
                  break;
              case '-':
-                 result = this.a - this.b;
+                 result = a - b;
                  break;
              case '*':
-                 result = this.a * this.b;
+                 result = a * b;
                  break;
              case '/':
                  if (b == 0) {
                      throw new ArithmeticException("두번째 입력한 숫자가 0인 경우 나눗셈할 수 없습니다.");
                  }
-                 result = (double) this.a / this.b;
+                 result = (double) a / b;
                  break;
 
          }
@@ -41,22 +39,24 @@ public class Calculator {
          return result;
      }
 
-     //게터
-     public int getA() {
-        return a;
-     }
-     public int getB() {
-        return b;
+
+     //게터: 저장된 계산 결과를 읽어오기
+     public List<Double> getResultAB() {
+        return resultAB;
      }
 
 
-     //세터: 사실 상 이 계산기에서는 필요없는 기능
-    public void setResultAB(List<Double> resultAB) {
-        this.resultAB = resultAB;
+     //세터: 값 바꾸기
+    public void set1(int a) {
+        this.a = a;
+    }
+
+    public void set2(int b) {
+        this.b = b;
     }
 
 
-    // resultAB 리스트 전체 비우기
+    // resultAB 리스트 전체 비우기 (초기화)
     public void removeResult() {
         resultAB.clear();
     }
