@@ -11,38 +11,34 @@ public class App3 {
 
         //숫자 a, b 입력받기
 
-            while (true) {
-                System.out.println("첫번째 숫자를 입력하세요: ");
-                if (scan.hasNextInt()) {
-                    int a = scan.nextInt();
-                    try {
-                        calculator.setA(a);
-                        break;
-                    }
-                    catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                } else {
-                    System.out.println("숫자로 다시 입력해주세요");
-                    scan.nextLine();    // 입력 버퍼 제거
-                }
-            }
+        while (true) {
+            System.out.println("첫번째 숫자를 입력하세요: ");
+            String input = scan.nextLine().trim();
 
-            while (true) {
-                System.out.println("두번째 숫자를 입력하세요: ");
-                if (scan.hasNextInt()) {
-                    int b = scan.nextInt();
-                    try {
-                        calculator.setB(b);
-                        break;
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                } else {
-                    System.out.println("숫자로 다시 입력해주세요");
-                    scan.nextLine();    // 입력 버퍼 제거
-                }
+            try {
+                int a = Integer.parseInt(input);
+                calculator.setA(a);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("숫자로 입력해주세요.");
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
+        }
+
+        while (true) {
+            System.out.println("두번째 숫자를 입력하세요: ");
+            String input = scan.nextLine().trim();
+            try {
+                int b = Integer.parseInt(input);
+                calculator.setB(b);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("숫자로 입력해주세요.");
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
 
         //사칙연산자 c 입력받기
@@ -58,25 +54,26 @@ public class App3 {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            scan.nextLine();    // 입력 버퍼 제거
         }
 
 
         //연산하고 출력하기
 
-
+        try {
+            double result = calculator.calculate();
+            System.out.println("계산 결과: " + result);
+            System.out.println("지금까지의 계산 결과: " + calculator.getResultAB());
+        } catch (ArithmeticException e) {
+            System.out.println("에러: " + e.getMessage());
+        }
 
 
         //계산을 더 진행할지 끝낼지 확인
 
 
-
-
-
-
-
+    }
 
 
 
     }
-}
+
