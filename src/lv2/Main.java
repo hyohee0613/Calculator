@@ -71,15 +71,29 @@ public class Main {
             System.out.println("지금까지의 계산 결과: " + calculator.getResultAB());
 
 
-
             //계산을 더 진행할지 끝낼지 확인
 
             System.out.println("더 계산하시겠습니까? (yes 입력 시 계속 / exit 입력 시 종료)");
             inputE = scan.nextLine();
             if (inputE.equals("exit")) {
-                System.out.println("계산 결과를 초기화하고 종료합니다.");
+                System.out.println("계산을 종료합니다.");
                 calculator.removeResult();
                 break;
+            } else if (inputE.equals("yes")) {
+                while (true) {
+                    System.out.println("가장 먼저 저장된 계산 결과를 삭제하시겠습니까? (yes 입력 시 삭제 후 계속 / no 입력 시 삭제하지 않고 계속)");
+                    inputE = scan.nextLine();
+                    if (inputE.equals("yes")) {
+                        calculator.removeResult();
+                        break;
+                    } else if (inputE.equals("no")) {
+                        break;
+                    }
+                    else {
+                        System.out.println("다시 입력해주세요 (yes, no만 입력 가능)");
+                    }
+                }
+
             }
 
 

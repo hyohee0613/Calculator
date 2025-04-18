@@ -56,9 +56,9 @@ public class Calculator {
     }
 
 
-    // resultAB 리스트 전체 비우기 (초기화)
+    // resultAB 리스트에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제 (List에 있는 기본 메서드)
     public void removeResult() {
-        resultAB.clear();
+        resultAB.remove(0);
     }
 
 }
