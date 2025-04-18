@@ -3,7 +3,7 @@ package lv2;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Calculator {
+public class Calculator2 {
 
     //속성
     private int a;
@@ -11,7 +11,7 @@ public class Calculator {
     private List<Double> resultAB = new ArrayList<>(); // 연산 결과를 저장하는 컬렉션 타입 필드
 
     //생성자 : 필요없음, 메서드에서 바로 값을 받아서 사용
-    public Calculator () {}
+    public Calculator2() {}
 
     //기능: 연산 후 연산 결과를 컬렉션 필드에 저장
      double calculate(char c) {
@@ -46,7 +46,7 @@ public class Calculator {
      }
 
 
-     //세터: 값 바꾸기
+     //세터: 값 저장하고 변경하기
     public void set1(int a) {
         this.a = a;
     }

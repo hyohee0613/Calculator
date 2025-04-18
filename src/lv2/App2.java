@@ -2,12 +2,12 @@ package lv2;
 
 import java.util.Scanner;
 
-public class App {
+public class App2 {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
 
-        Calculator calculator = new Calculator();
+        Calculator2 calculator = new Calculator2();
 
         String inputE;
 
