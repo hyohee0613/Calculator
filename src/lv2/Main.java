@@ -15,6 +15,7 @@ public class Main {
 
             while (true) {
                 System.out.println("첫번째 숫자를 입력하세요: ");
+                if (scan.hasNextInt()) {
                 int a = scan.nextInt();
 
                 if (a < 0) {
@@ -24,21 +25,30 @@ public class Main {
                     calculator.set1(a);
                     break;
                 }
-
+            } else {
+                    System.out.println("숫자로 다시 입력해주세요");
+                    scan.nextLine();    // 입력 버퍼 제거
+                }
             }
 
             while (true) {
                 System.out.println("두번째 숫자를 입력하세요: ");
-                int b = scan.nextInt();
-                scan.nextLine();    // 입력 버퍼 제거
+                if (scan.hasNextInt()) {
+                    int b = scan.nextInt();
+                    scan.nextLine();    // 입력 버퍼 제거
 
-                if (b < 0) {
-                    System.out.println("0을 포함한 양의 정수로 다시 입력해주세요");
+                    if (b < 0) {
+                        System.out.println("0을 포함한 양의 정수로 다시 입력해주세요");
 
+                    } else {
+                        calculator.set2(b);
+                        break;
+                    }
                 } else {
-                    calculator.set2(b);
-                    break;
+                    System.out.println("숫자로 다시 입력해주세요");
+                    scan.nextLine();    // 입력 버퍼 제거
                 }
+
             }
 
             //사칙연산 기호 입력
