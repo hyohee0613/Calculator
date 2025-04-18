@@ -2,7 +2,7 @@ package Lv1;
 
 import java.util.Scanner;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
 
 //        필수 기능
