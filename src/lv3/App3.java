@@ -73,29 +73,27 @@ public class App3 {
             System.out.println("더 계산하시겠습니까? (yes 입력 시 계속 / exit 입력 시 종료)");
             String e = scan.nextLine();
 
-            if (e.equals("exit")) {
+            if (e.equalsIgnoreCase("exit")) {
                 System.out.println("계산을 종료합니다.");
-                break;         //  while 루프 종료
+                break;           //  전체 while 루프 종료
 
-            } else if (e.equals("yes")) {
+            } else if (e.equalsIgnoreCase("yes")) {
                 while (true) {
-                    System.out.println("가장 먼저 저장된 계산 결과를 삭제하시겠습니까? (yes 입력 시 삭제 후 계속 / no 입력 시 삭제하지 않고 계속)");
+                    System.out.println("저장된 연산 결과를 조회하시겠습니까? (yes 입력 시 조회 / no 입력 시 조회하지 않고 계산 계속)");
                     e = scan.nextLine();
-                    if (e.equals("yes")) {
-                        calculator.removeResult();
+                    if (e.equalsIgnoreCase("yes")) {
+                        System.out.println("입력하신 숫자보다 큰 값만 조회됩니다. 숫자를 입력해주세요.");
+                        double f = scan.nextDouble();
+                        scan.nextLine();  // 입력 버퍼 제거
+                        calculator.printCheckInputValue(f);
                         break;
-                    } else if (e.equals("no")) {
+                    } else if (e.equalsIgnoreCase("no")) {
                         break;
                     } else {
                         System.out.println("다시 입력해주세요 (yes, no만 입력 가능)");
                     }
                 }
 
-                // break 후, while 루프 처음부터 숫자 입력으로 돌아감
-
-            } else {
-                System.out.println("잘못된 입력입니다. 프로그램을 종료합니다.");
-                break;
             }
         }
     }

@@ -71,9 +71,14 @@ public class ArithmeticCalculator<T extends Number> {
           this.c = OperatorType.fromChar(c.charAt(0));
       }
 
-    // resultAB 리스트에 저장된 연산 결과들 중 가장 먼저 저장된 데이터를 삭제 (List에 있는 기본 메서드)
-    public void removeResult() {
-        resultAB.remove(0);
+
+    // 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값 들을 출력
+    public void printCheckInputValue(double inputvalue) {
+        System.out.println("[" + inputvalue + "]보다 큰 계산 결과:");
+
+        resultAB.stream()
+                .filter(result -> result > inputvalue)
+                .forEach(result -> System.out.println(result));
     }
 
 }
