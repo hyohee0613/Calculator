@@ -18,7 +18,7 @@ package lv3;
                     return type;
                 }
             }
-            throw new IllegalArgumentException("연산자가 올바르지 않습니다.");
+            throw new IllegalArgumentException("+, -, *, / 중 한 개만 입력해주세요.");
         }
 
 
